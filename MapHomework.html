@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+	<style>
+	body {
+	padding:0;
+	margin:0;
+	height: 100%;
+
+}
+html{
+	position: absolute;
+	top: 0;
+	bottom:0;
+	width: 100%;
+}
+#map1 {
+	height: 50%;
+	width: 50%;
+}
+#map2 {
+	height: 50%;
+	width: 50%;
+}
+
+#map3{
+	height: 50%;
+	width: 50%;
+	position:absolute;
+	left: 50%;
+	top: 0;
+
+}
+
+#map4{
+	height: 50%;
+	width: 50%;
+	position:absolute;
+	left:50%;
+	bottom: 0;
+	
+	
+
+}
+/*p {
+	text-align: center;
+}*/
+
+</style>
+
+<title> Maps of Innoshima </title>
+<link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css">
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+</head>
+
+
+
+
+
+<body>
+	<div id = "map1"></div>
+	<div id = "map2"></div>
+	<div id = "map3"></div>
+	<div id = "map4"></div>
+
+		<script>
+
+//OSM MAP - INNOSHIMA
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+});
+//leaflet.js info
+var map1 = L.map('map1', {
+	scrollWheelZoom: true,
+	center: [34.316667, 133.166667],
+	zoom: 9
+});
+
+map1.addLayer(layer);	
+
+var layer = new L.StamenTileLayer("toner");
+var map2 = new L.Map("map2", {
+	center: new L.LatLng(34.316667, 133.166667),
+	zoom: 9
+});
+map2.addLayer(layer);
+
+
+var layer = new L.StamenTileLayer("watercolor");
+var map3 = new L.Map("map3", {
+	center: new L.LatLng(34.316667, 133.166667),
+	zoom: 9
+});
+map3.addLayer(layer);
+
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+});
+var map4 = L.map('map4', {
+	scrollWheelZoom: true,
+	center: [34.316667, 133.166667],
+	zoom: 9
+});
+map4.addLayer(layer);
+
+
+//CREDIT GOES TO leaflet.js, Mimi Onuoha & 
+// Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.
+// Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.
+   
+   </script>
+
+</body>
+
+</html>
+
